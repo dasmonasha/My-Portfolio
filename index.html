@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <title>Jayasundara - Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
@@ -30,6 +30,7 @@
             padding: 20px;
         }
 
+        /* Header */
         .header {
             background-color: transparent;
             padding: 20px 40px;
@@ -45,11 +46,13 @@
         }
 
         .logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             font-weight: bold;
+            color: var(--text-white);
+        }
+
+        .logo span {
+            color: var(--accent-yellow);
         }
 
         .nav ul {
@@ -76,6 +79,7 @@
             cursor: pointer;
         }
 
+        /* Hero Banner */
         .hero-banner {
             background-color: #000000;
             border-radius: 20px;
@@ -120,26 +124,39 @@
             color: var(--accent-yellow);
         }
 
-        .cases-section {
+        /* Global Sections Layout */
+        section {
             max-width: 1400px;
-            margin: 0 auto;
+            margin: 0 auto 60px auto;
+            padding: 20px;
         }
 
-        .case-studies-btn {
-            background-color: var(--accent-yellow);
-            color: var(--text-black);
-            border: none;
-            padding: 15px 35px;
-            font-size: 1rem;
-            font-weight: bold;
-            border-radius: 30px;
-            cursor: pointer;
-            margin-bottom: 40px;
+        h2 {
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+            color: #ffffff;
+            border-left: 5px solid var(--accent-yellow);
+            padding-left: 15px;
         }
 
+        /* About Section */
+        .about-container {
+            background-color: var(--card-bg-dark);
+            padding: 40px;
+            border-radius: 20px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-gray);
+        }
+
+        .about-container strong {
+            color: var(--text-white);
+        }
+
+        /* Projects Section (Case Studies Style) */
         .cases-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(2, 1fr);
             gap: 20px;
         }
 
@@ -150,21 +167,21 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            min-height: 500px;
+            min-height: 400px;
         }
 
         .case-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 30px;
+            font-size: 1.6rem;
+            margin-bottom: 20px;
             color: #ffffff;
         }
 
         .case-details {
             list-style: none;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
             display: flex;
             flex-direction: column;
-            gap: 15px;
+            gap: 12px;
         }
 
         .case-details li {
@@ -172,6 +189,7 @@
             line-height: 1.6;
             position: relative;
             padding-left: 25px;
+            color: var(--text-gray);
         }
 
         .case-details li::before {
@@ -190,41 +208,126 @@
             color: var(--text-black);
         }
 
-        .details-dark li::before {
+        .card-yellow .case-details li {
+            color: var(--text-black);
+        }
+
+        .card-yellow .case-details li::before {
             color: #000000;
         }
 
-        .read-more-btn-outline {
-            display: inline-block;
-            padding: 12px 25px;
-            border: 2px solid var(--accent-yellow);
-            border-radius: 25px;
+        /* Tags for tech */
+        .tech-tags {
+            margin-top: 15px;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: #0c0d10;
             color: var(--accent-yellow);
-            text-decoration: none;
-            font-size: 0.9rem;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
             font-weight: bold;
-            text-align: center;
         }
 
-        .read-more-btn-filled {
-            display: inline-block;
-            padding: 12px 25px;
-            background-color: var(--text-black);
-            border-radius: 25px;
+        .card-yellow .tag {
+            background: #000000;
             color: #ffffff;
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: bold;
-            text-align: center;
         }
 
+        /* Skills Section */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .skills-category {
+            background-color: var(--card-bg-dark);
+            padding: 30px;
+            border-radius: 20px;
+        }
+
+        .skills-category h3 {
+            color: var(--accent-yellow);
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+
+        .skills-category ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .skills-category li {
+            font-size: 1rem;
+            color: var(--text-gray);
+        }
+
+        .skills-category i {
+            color: var(--accent-yellow);
+            margin-right: 10px;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            text-align: center;
+            background-color: var(--card-bg-dark);
+            padding: 50px;
+            border-radius: 20px;
+        }
+
+        .contact-section p {
+            color: var(--text-gray);
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 30px;
+            font-size: 1.2rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-info i {
+            color: var(--accent-yellow);
+            margin-right: 10px;
+        }
+
+        .social-links a {
+            font-size: 2.5rem;
+            color: var(--text-white);
+            margin: 0 15px;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: var(--accent-yellow);
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            color: #555555;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
         @media (max-width: 1024px) {
-            .cases-grid { grid-template-columns: repeat(2, 1fr); }
+            .cases-grid { grid-template-columns: 1fr; }
         }
         @media (max-width: 768px) {
-            .cases-grid { grid-template-columns: 1fr; }
             .hero-banner-container { flex-direction: column; height: auto; }
             .hero-image-side, .hero-text-side { width: 100%; }
+            .nav ul { display: none; } /* Simplified for code size */
         }
     </style>
 </head>
@@ -232,66 +335,128 @@
 
     <header class="header">
         <div class="header-container">
-            <div class="logo">VW Portfolio</div>
+            <div class="logo">Jayasundara<span>.dev</span></div>
             <nav class="nav">
                 <ul>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Case Studies</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Blog</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
             <div class="menu-burger">Menu <i class="fa-solid fa-bars"></i></div>
         </div>
     </header>
 
-    <main class="cases-section">
+    <main>
         <section class="hero-banner">
             <div class="hero-banner-container">
                 <div class="hero-image-side">
-                    <img src="https://via.placeholder.com/400x600/333333/ffffff?text=Add+Photo" alt="Profile" class="developer-img">
+                    <img src="https://via.placeholder.com/400x600/333333/ffffff?text=Jayasundara" alt="Developer" class="developer-img">
                 </div>
                 <div class="hero-text-side">
-                    <h1 class="crafted-title">CRAFTEDCANVAS</h1>
-                    <p class="crafted-subtitle">Crafted Everything</p>
+                    <h1 class="crafted-title">JAYASUNDARA</h1>
+                    <p class="crafted-subtitle">Software Engineering Undergraduate & Developer</p>
                 </div>
             </div>
         </section>
 
-        <button class="case-studies-btn">Case Studies</button>
-
-        <div class="cases-grid">
-            <div class="case-card">
-                <h3>Enhancing User Experience</h3>
-                <ul class="case-details">
-                    <li>Develop a visually stunning and professional portfolio website.</li>
-                    <li>Create an intuitive navigation structure for easy access to portfolio items.</li>
-                    <li>Optimize the website for responsiveness across various devices.</li>
-                </ul>
-                <a href="#" class="read-more-btn-outline">Read more</a>
+        <section id="about">
+            <h2>About Me</h2>
+            <div class="about-container">
+                <p>I am an Information Technology & Software Engineering undergraduate with a proven track record in custom software development and technology integration. Recognized as a highly resilient all-rounder, I possess strong executive leadership, strategic coordination, and communication skills developed under high-pressure environments.</p>
+                <p style="margin-top: 15px;">My core strengths lie in systematic execution—rooted deeply in my extensive background as a school <strong>Head Prefect</strong>, <strong>Child Protection Student Ambassador</strong>, and a <strong>Multi-Sport Team Captain</strong> leading disciplines like Cricket, Volleyball, Elle, and Kabaddi, alongside practicing competitive Karate.</p>
             </div>
+        </section>
 
-            <div class="case-card card-yellow">
-                <h3>Fashion Photography Lookbook</h3>
-                <ul class="case-details details-dark">
-                    <li>Capture high-quality images showcasing collections effectively.</li>
-                    <li>Highlight product details to create visually appealing content.</li>
-                    <li>Enhance credibility through professional brand aesthetics.</li>
-                </ul>
-                <a href="#" class="read-more-btn-filled">Read more</a>
-            </div>
+        <section id="projects">
+            <h2>Core Projects</h2>
+            <div class="cases-grid">
+                
+                <div class="case-card card-yellow">
+                    <h3>Custom POS & Inventory System</h3>
+                    <ul class="case-details">
+                        <li>Designed and custom-built a fully functional Point of Sale and inventory management system from scratch.</li>
+                        <li>Tailored backend logic for massive hardware and commercial retail inventories.</li>
+                        <li>Handles real-time stock levels, dynamic billing modules, and transaction databases.</li>
+                        <li>Utilized generative AI-assisted environments to optimize code quality and workflow speed.</li>
+                    </ul>
+                    <div class="tech-tags">
+                        <span class="tag">Architecture</span>
+                        <span class="tag">SQL Databases</span>
+                        <span class="tag">AI Coding</span>
+                    </div>
+                </div>
 
-            <div class="case-card">
-                <h3>Brand Identity Refresh</h3>
-                <ul class="case-details">
-                    <li>Revitalize brand identity elements such as logo and typography.</li>
-                    <li>Create brand guidelines for consistent presentation everywhere.</li>
-                    <li>Strengthen brand recognition among target audiences.</li>
-                </ul>
-                <a href="#" class="read-more-btn-outline">Read more</a>
+                <div class="case-card">
+                    <h3>Professional Digital Ecosystem</h3>
+                    <ul class="case-details">
+                        <li>A clean, modern, high-end responsive portfolio ecosystem.</li>
+                        <li>Built to showcase technical competencies, projects, and leadership metrics globally.</li>
+                        <li>Optimized for performance and dynamic rendering across all device displays.</li>
+                    </ul>
+                    <div class="tech-tags">
+                        <span class="tag">HTML5</span>
+                        <span class="tag">CSS3 Grid</span>
+                        <span class="tag">JavaScript</span>
+                    </div>
+                </div>
+
             </div>
-        </div>
+        </section>
+
+        <section id="skills">
+            <h2>Skills & Certifications</h2>
+            <div class="skills-container">
+                
+                <div class="skills-category">
+                    <h3>Technical Specializations</h3>
+                    <ul>
+                        <li><i class="fa-solid fa-code"></i> Software & Web Development</li>
+                        <li><i class="fa-solid fa-database"></i> Database Management (SQL)</li>
+                        <li><i class="fa-solid fa-robot"></i> AI-assisted Core Workflows</li>
+                        <li><i class="fa-solid fa-keyboard"></i> High-Speed Professional Typing</li>
+                    </ul>
+                </div>
+
+                <div class="skills-category">
+                    <h3>Leadership Metrics</h3>
+                    <ul>
+                        <li><i class="fa-solid fa-users"></i> Executive Team Coordination</li>
+                        <li><i class="fa-solid fa-bullhorn"></i> Public Relations & Strategic Liaison</li>
+                        <li><i class="fa-solid fa-brain"></i> Mental Discipline & Endurance</li>
+                    </ul>
+                </div>
+
+                <div class="skills-category">
+                    <h3>Professional Certifications</h3>
+                    <ul>
+                        <li><i class="fa-solid fa-award"></i> Spoken English - OUSL</li>
+                        <li><i class="fa-solid fa-award"></i> IT & AI Specialist - Advanced Inst.</li>
+                        <li><i class="fa-solid fa-award"></i> IT & Typing Mechanics - DP Academy</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Let's Connect</h2>
+            <p>Open for freelance software engineering consultations and enterprise system design layouts.</p>
+            <div class="contact-info">
+                <span><i class="fa-solid fa-phone"></i> +94 71 878 3416</span>
+                <span><i class="fa-solid fa-envelope"></i> [ඔයාගේ_Email_එක_මෙතනට_දාන්න]</span>
+            </div>
+            <div class="social-links">
+                <a href="https://linkedin.com" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://github.com" target="_blank"><i class="fa-brands fa-github"></i></a>
+            </div>
+        </section>
     </main>
+
+    <footer>
+        <p>&copy; 2026 Jayasundara. All Rights Reserved.</p>
+    </footer>
 
 </body>
 </html>
