@@ -52,7 +52,9 @@
             letter-spacing: 1px;
         }
 
-        .logo span { color: var(--accent-yellow); }
+        .logo span {
+            color: var(--accent-yellow);
+        }
 
         .nav ul {
             display: flex;
@@ -67,7 +69,16 @@
             transition: color 0.3s;
         }
 
-        .nav a:hover { color: var(--accent-yellow); }
+        .nav a:hover {
+            color: var(--accent-yellow);
+        }
+
+        .menu-burger {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+        }
 
         /* Hero Banner */
         .hero-banner {
@@ -100,6 +111,7 @@
             width: 65%;
             padding: 60px;
             text-align: center;
+            position: relative;
         }
 
         .crafted-title {
@@ -116,6 +128,7 @@
             letter-spacing: 1px;
         }
 
+        /* Global Sections Layout */
         section {
             max-width: 1400px;
             margin: 0 auto 60px auto;
@@ -131,6 +144,7 @@
             text-transform: uppercase;
         }
 
+        /* About Section */
         .about-container {
             background-color: var(--card-bg-dark);
             padding: 40px;
@@ -141,136 +155,246 @@
             border: 1px solid #222;
         }
 
-        /* Dynamic Gallery Section */
-        .admin-controls {
-            background: #111215;
-            padding: 25px;
-            border-radius: 15px;
-            margin-bottom: 30px;
-            border: 1px dashed var(--accent-yellow);
+        .about-container strong {
+            color: #ffffff;
+            border-bottom: 2px solid var(--accent-yellow);
         }
 
-        .admin-controls h3 {
-            margin-bottom: 15px;
-            color: var(--accent-yellow);
-            font-size: 1.1rem;
-        }
-
-        .form-group {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-            align-items: center;
-        }
-
-        .form-group input, .form-group select {
-            background: #1c1d22;
-            border: 1px solid #333;
-            color: #fff;
-            padding: 10px 15px;
-            border-radius: 8px;
-            font-size: 0.95rem;
-            flex: 1;
-            min-width: 200px;
-        }
-
-        .form-group input[type="file"] {
-            padding: 7px;
-        }
-
-        .upload-btn {
-            background: var(--accent-yellow);
-            color: var(--text-black);
-            border: none;
-            padding: 11px 25px;
-            border-radius: 8px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.2s;
-        }
-
-        .upload-btn:hover {
-            transform: scale(1.03);
-        }
-
-        .gallery-grid {
+        /* Interactive Grid Layout (Touch/Hover Cards) */
+        .cases-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            grid-template-columns: repeat(2, 1fr);
             gap: 25px;
         }
 
-        .gallery-item {
+        .case-card {
             background-color: var(--card-bg-dark);
-            border-radius: 15px;
-            overflow: hidden;
+            border-radius: 20px;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 450px;
             border: 1px solid #222;
-            position: relative;
             transition: all 0.3s ease;
+            cursor: pointer;
         }
 
-        .gallery-item:hover {
+        /* ටච් කරද්දී හෝ මවුස් එක ගෙනිච්චම වෙනස් වෙන හැටි */
+        .case-card:hover, .case-card:active {
+            transform: translateY(-8px);
             border-color: var(--accent-yellow);
+            box-shadow: 0 10px 20px rgba(241, 246, 24, 0.1);
         }
 
-        .gallery-media {
+        .case-card h3 {
+            font-size: 1.7rem;
+            margin-bottom: 25px;
+            color: #ffffff;
+        }
+
+        .case-details {
+            list-style: none;
+            margin-bottom: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .case-details li {
+            font-size: 1rem;
+            line-height: 1.6;
+            position: relative;
+            padding-left: 25px;
+            color: var(--text-gray);
+        }
+
+        .case-details li::before {
+            content: "●";
+            position: absolute;
+            left: 0;
+            color: var(--accent-yellow);
+        }
+
+        /* කහ පාටින් කැපිලා පේන කාඩ් එක */
+        .card-yellow {
+            background-color: var(--accent-yellow);
+            color: var(--text-black);
+            border: none;
+        }
+
+        .card-yellow h3 {
+            color: var(--text-black);
+            font-weight: 800;
+        }
+
+        .card-yellow .case-details li {
+            color: var(--text-black);
+            font-weight: 500;
+        }
+
+        .card-yellow .case-details li::before {
+            color: #000000;
+        }
+
+        /* Media Container (ෆොටෝ, වීඩියෝ දාන්න පුළුවන් තැන්) */
+        .media-box {
             width: 100%;
-            height: 220px;
-            background: #000;
+            height: 200px;
+            background: #090a0c;
+            border-radius: 12px;
+            margin-bottom: 20px;
             overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px dashed #444;
         }
 
-        .gallery-media img, .gallery-media video {
+        .media-box img, .media-box video {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
 
-        .gallery-caption {
-            padding: 20px;
+        .media-placeholder {
+            color: #555;
+            font-size: 0.9rem;
+            text-align: center;
         }
 
-        .gallery-caption h4 {
-            color: #fff;
-            font-size: 1.2rem;
-            margin-bottom: 8px;
+        .media-placeholder i {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            display: block;
+            color: #333;
         }
 
-        .gallery-caption p {
-            color: var(--text-gray);
-            font-size: 0.95rem;
-            line-height: 1.4;
+        /* Tech Tags */
+        .tech-tags {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
         }
 
-        .gallery-tag {
-            display: inline-block;
-            background: rgba(241, 246, 24, 0.1);
+        .tag {
+            background: #0c0d10;
             color: var(--accent-yellow);
-            padding: 4px 10px;
-            border-radius: 5px;
-            font-size: 0.75rem;
-            font-weight: bold;
-            margin-top: 10px;
-        }
-
-        .delete-btn {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background: rgba(255, 0, 0, 0.8);
-            color: white;
-            border: none;
-            padding: 5px 10px;
-            border-radius: 5px;
-            cursor: pointer;
+            padding: 6px 14px;
+            border-radius: 20px;
             font-size: 0.8rem;
+            font-weight: bold;
+            border: 1px solid #222;
         }
 
-        /* Contact & Footer */
-        .contact-section { text-align: center; background-color: var(--card-bg-dark); padding: 60px; border-radius: 20px; border: 1px solid #222; }
-        .contact-info { display: flex; justify-content: center; gap: 50px; margin-bottom: 40px; font-size: 1.25rem; flex-wrap: wrap; }
-        .contact-info i { color: var(--accent-yellow); margin-right: 12px; }
-        .social-links a { font-size: 2.8rem; color: var(--text-white); margin: 0 20px; }
-        footer { text-align: center; padding: 40px; color: #444; }
+        .card-yellow .tag {
+            background: #000000;
+            color: #ffffff;
+        }
+
+        /* Skills Section */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .skills-category {
+            background-color: var(--card-bg-dark);
+            padding: 35px;
+            border-radius: 20px;
+            border: 1px solid #222;
+            transition: all 0.3s ease;
+        }
+
+        .skills-category:hover {
+            border-color: var(--accent-yellow);
+        }
+
+        .skills-category h3 {
+            color: var(--accent-yellow);
+            margin-bottom: 25px;
+            font-size: 1.3rem;
+            text-transform: uppercase;
+        }
+
+        .skills-category ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .skills-category li {
+            font-size: 1.05rem;
+            color: var(--text-gray);
+        }
+
+        .skills-category i {
+            color: var(--accent-yellow);
+            margin-right: 12px;
+            width: 20px;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            text-align: center;
+            background-color: var(--card-bg-dark);
+            padding: 60px;
+            border-radius: 20px;
+            border: 1px solid #222;
+        }
+
+        .contact-section p {
+            color: var(--text-gray);
+            margin-bottom: 35px;
+            font-size: 1.1rem;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            margin-bottom: 40px;
+            font-size: 1.25rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-info i {
+            color: var(--accent-yellow);
+            margin-right: 12px;
+        }
+
+        .social-links a {
+            font-size: 2.8rem;
+            color: var(--text-white);
+            margin: 0 20px;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--accent-yellow);
+            transform: scale(1.1);
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            color: #444;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .cases-grid { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 768px) {
+            .hero-banner-container { flex-direction: column; height: auto; }
+            .hero-image-side, .hero-text-side { width: 100%; }
+            .hero-image-side { height: 300px; }
+            .crafted-title { font-size: 3rem; }
+            .nav ul { display: none; }
+        }
     </style>
 </head>
 <body>
@@ -278,6 +402,15 @@
     <header class="header">
         <div class="header-container">
             <div class="logo">D.A.S. <span>MONASHA</span></div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="menu-burger">Menu <i class="fa-solid fa-bars"></i></div>
         </div>
     </header>
 
@@ -298,47 +431,107 @@
             <h2>About Me</h2>
             <div class="about-container">
                 <p>I am an Information Technology & Software Engineering undergraduate with a proven track record in custom software development and technology integration. Recognized as a highly resilient all-rounder, I possess strong executive leadership, strategic coordination, and communication skills developed under high-pressure environments.</p>
+                <p style="margin-top: 15px;">My core strengths lie in systematic execution—rooted deeply in my extensive background as a school <strong>Head Prefect</strong>, <strong>Child Protection Student Ambassador</strong>, and a <strong>Multi-Sport Team Captain</strong> leading disciplines like Cricket, Volleyball, Elle, and Kabaddi, alongside practicing competitive Karate.</p>
             </div>
         </section>
 
-        <section id="gallery">
-            <h2>Media & Achievements Gallery</h2>
-            
-            <div class="admin-controls">
-                <h3><i class="fa-solid fa-plus"></i> Add New Media (Photo, Video, Medal, Certificate)</h3>
-                <div class="form-group">
-                    <input type="file" id="mediaFile" accept="image/*,video/*">
-                    <input type="text" id="mediaTitle" placeholder="Title / Name (e.g., Volleyball Medal)">
-                    <select id="mediaCategory">
-                        <option value="Medal">Medal</option>
-                        <option value="Certificate">Certificate</option>
-                        <option value="Photo">Photo</option>
-                        <option value="Video">Video</option>
-                    </select>
-                    <input type="text" id="mediaDesc" placeholder="Description / Caption">
-                    <button class="upload-btn" onclick="addItem()">Add to Gallery</button>
+        <section id="projects">
+            <h2>Core Projects & Experience</h2>
+            <div class="cases-grid">
+                
+                <div class="case-card card-yellow">
+                    <div>
+                        <div class="media-box">
+                            <div class="media-placeholder">
+                                <i class="fa-solid fa-calculator"></i>
+                                [Add POS Demo Screenshot / Video here]
+                            </div>
+                        </div>
+                        <h3>Advanced POS & Inventory Architecture</h3>
+                        <ul class="case-details">
+                            <li>Custom-built a comprehensive Point of Sale system from scratch to streamline commercial workflows.</li>
+                            <li>Engineered backend handling for massive hardware retail product databases.</li>
+                            <li>Features real-time stock mapping, dynamic billing, and secure sales reporting.</li>
+                        </ul>
+                    </div>
+                    <div class="tech-tags">
+                        <span class="tag">SQL Backend</span>
+                        <span class="tag">AI Workflows</span>
+                        <span class="tag">System Design</span>
+                    </div>
                 </div>
-            </div>
 
-            <div class="gallery-grid" id="galleryGrid">
-                <div class="gallery-item">
-                    <div class="gallery-media">
-                        <img src="profile.jpeg" alt="Sample">
+                <div class="case-card">
+                    <div>
+                        <div class="media-box">
+                            <div class="media-placeholder">
+                                <i class="fa-solid fa-users-line"></i>
+                                [Add Leadership / Sports Photo here]
+                            </div>
+                        </div>
+                        <h3>Executive Student Leadership</h3>
+                        <ul class="case-details">
+                            <li>Served as school Head Prefect, managing student discipline and event coordination.</li>
+                            <li>Appointed Child Protection Student Ambassador, driving policy advocacy programs.</li>
+                            <li>Multi-Sport Team Captain leading Cricket, Volleyball, Elle, and Kabaddi disciplines.</li>
+                        </ul>
                     </div>
-                    <div class="gallery-caption">
-                        <h4>Welcome to Your Portfolio</h4>
-                        <p>Upload your achievements instantly using the section above.</p>
-                        <span class="gallery-tag">Info</span>
+                    <div class="tech-tags">
+                        <span class="tag">Governance</span>
+                        <span class="tag">Public Relations</span>
+                        <span class="tag">Strategy</span>
                     </div>
                 </div>
+
             </div>
         </section>
 
-        <section id="contact" class="contact-section">
+        <section id="skills">
+            <h2>Skills & Certifications</h2>
+            <div class="skills-container">
+                
+                <div class="skills-category">
+                    <h3>Technical Specializations</h3>
+                    <ul>
+                        <li><i class="fa-solid fa-code"></i> Full-stack Software Development</li>
+                        <li><i class="fa-solid fa-database"></i> Database Management (SQL)</li>
+                        <li><i class="fa-solid fa-robot"></i> Agentic AI Tools & Assisted Workflows</li>
+                        <li><i class="fa-solid fa-keyboard"></i> High-Speed Professional Typing</li>
+                    </ul>
+                </div>
+
+                <div class="skills-category">
+                    <h3>Core Leadership Strengths</h3>
+                    <ul>
+                        <li><i class="fa-solid fa-people-roof"></i> Executive Team Coordination</li>
+                        <li><i class="fa-solid fa-bullhorn"></i> Public Relations & Strategic Liaison</li>
+                        <li><i class="fa-solid fa-chess"></i> On-field Tactical Sports Strategy</li>
+                        <li><i class="fa-solid fa-brain"></i> High-Discipline Mental Endurance</li>
+                    </ul>
+                </div>
+
+                <div class="skills-category">
+                    <h3>Professional Certifications</h3>
+                    <ul>
+                        <li><i class="fa-solid fa-award"></i> Spoken English - OUSL (Open University)</li>
+                        <li><i class="fa-solid fa-award"></i> IT & AI Tools Specialist - Advanced Inst.</li>
+                        <li><i class="fa-solid fa-award"></i> IT & Typing Mechanics - DP ICT Academy</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="contact">
             <h2>Let's Connect</h2>
+            <p>Open for freelance software engineering opportunities and enterprise-grade system design collaborations.</p>
             <div class="contact-info">
                 <span><i class="fa-solid fa-phone"></i> +94 71 878 3416</span>
                 <span><i class="fa-solid fa-envelope"></i> contact@monasha.dev</span>
+            </div>
+            <div class="social-links">
+                <a href="https://linkedin.com" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://github.com" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
             </div>
         </section>
     </main>
@@ -347,94 +540,5 @@
         <p>&copy; 2026 D.A.S. Monasha. All Rights Reserved.</p>
     </footer>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", loadItems);
-
-        function addItem() {
-            const fileInput = document.getElementById('mediaFile');
-            const titleInput = document.getElementById('mediaTitle').value;
-            const catInput = document.getElementById('mediaCategory').value;
-            const descInput = document.getElementById('mediaDesc').value;
-
-            if (!fileInput.files[0] || !titleInput) {
-                alert("කරුණාකර ෆොටෝ/වීඩියෝ එකක් සහ Title එකක් ඇතුළත් කරන්න!");
-                return;
-            }
-
-            const file = fileInput.files[0];
-            const reader = new FileReader();
-
-            reader.onload = function(e) {
-                const mediaUrl = e.target.result;
-                const isVideo = file.type.startsWith('video/');
-
-                const newItem = {
-                    id: Date.now(),
-                    title: titleInput,
-                    category: catInput,
-                    description: descDesc = descInput,
-                    media: mediaUrl,
-                    isVideo: isVideo
-                };
-
-                let items = localStorage.getItem('portfolio_gallery') ? JSON.parse(localStorage.getItem('portfolio_gallery')) : [];
-                items.push(newItem);
-                localStorage.setItem('portfolio_gallery', JSON.stringify(items));
-
-                // Reset Form
-                document.getElementById('mediaTitle').value = '';
-                document.getElementById('mediaDesc').value = '';
-                document.getElementById('mediaFile').value = '';
-
-                loadItems();
-            };
-
-            reader.readAsDataURL(file);
-        }
-
-        function loadItems() {
-            const grid = document.getElementById('galleryGrid');
-            let items = localStorage.getItem('portfolio_gallery') ? JSON.parse(localStorage.getItem('portfolio_gallery')) : [];
-            
-            // Default Item HTML
-            let htmlContent = `
-                <div class="gallery-item">
-                    <div class="gallery-media"><img src="profile.jpeg"></div>
-                    <div class="gallery-caption">
-                        <h4>Welcome to Your Portfolio</h4>
-                        <p>Upload your achievements instantly using the section above.</p>
-                        <span class="gallery-tag">Info</span>
-                    </div>
-                </div>
-            `;
-
-            items.forEach(item => {
-                htmlContent += `
-                    <div class="gallery-item" id="item-${item.id}">
-                        <button class="delete-btn" onclick="deleteItem(${item.id})">Delete</button>
-                        <div class="gallery-media">
-                            ${item.isVideo ? `<video src="${item.media}" controls></video>` : `<img src="${item.media}">`}
-                        </div>
-                        <div class="gallery-caption">
-                            <h4>${item.title}</h4>
-                            <p>${item.description}</p>
-                            <span class="gallery-tag">${item.category}</span>
-                        </div>
-                    </div>
-                `;
-            });
-
-            grid.innerHTML = htmlContent;
-        }
-
-        function deleteItem(id) {
-            if(confirm("මේ Item එක මකා දැමීමට අවශ්‍යද?")) {
-                let items = JSON.parse(localStorage.getItem('portfolio_gallery'));
-                items = items.filter(item => item.id !== id);
-                localStorage.setItem('portfolio_gallery', JSON.stringify(items));
-                loadItems();
-            }
-        }
-    </script>
 </body>
 </html>
