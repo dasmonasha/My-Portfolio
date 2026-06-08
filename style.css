@@ -290,3 +290,34 @@ body {
     }
 }
 }
+/* Trending Button Style */
+.btn-modern {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 28px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.35s ease;
+    background: linear-gradient(135deg,#f1f618,#d4d900);
+    color: #000;
+    box-shadow: 0 8px 25px rgba(241,246,24,0.25);
+}
+
+.btn-modern:hover {
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 15px 35px rgba(241,246,24,0.45);
+}
+
+.btn-dark {
+    background: #16171b;
+    color: white;
+    border: 1px solid #333;
+}
+
+.btn-dark:hover {
+    border-color: #f1f618;
+    color: #f1f618;
+}
