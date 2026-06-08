@@ -4,84 +4,294 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jayasundara - Crafted Everything</title>
-    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-color: #0c0d10;
+            --card-bg-dark: #16171b;
+            --accent-yellow: #f1f618;
+            --text-white: #e8e9eb;
+            --text-gray: #a1a3a6;
+            --text-black: #111111;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-white);
+            padding: 20px;
+        }
+
+        .header {
+            background-color: transparent;
+            padding: 20px 40px;
+            margin-bottom: 20px;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+
+        .nav ul {
+            display: flex;
+            list-style: none;
+            gap: 40px;
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: var(--text-white);
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        .nav a:hover {
+            color: var(--accent-yellow);
+        }
+
+        .menu-burger {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+        }
+
+        .hero-banner {
+            background-color: #000000;
+            border-radius: 20px;
+            overflow: hidden;
+            margin-bottom: 60px;
+        }
+
+        .hero-banner-container {
+            display: flex;
+            align-items: center;
+            height: 400px;
+        }
+
+        .hero-image-side {
+            width: 35%;
+            height: 100%;
+        }
+
+        .developer-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-text-side {
+            width: 65%;
+            padding: 60px;
+            text-align: center;
+            position: relative;
+        }
+
+        .crafted-title {
+            font-size: 4rem;
+            font-weight: 800;
+            letter-spacing: -2px;
+            margin-bottom: 15px;
+            color: #ffffff;
+        }
+
+        .crafted-subtitle {
+            font-size: 1.2rem;
+            color: var(--accent-yellow);
+        }
+
+        .cases-section {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .case-studies-btn {
+            background-color: var(--accent-yellow);
+            color: var(--text-black);
+            border: none;
+            padding: 15px 35px;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 30px;
+            cursor: pointer;
+            margin-bottom: 40px;
+        }
+
+        .cases-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .case-card {
+            background-color: var(--card-bg-dark);
+            border-radius: 20px;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 500px;
+        }
+
+        .case-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            color: #ffffff;
+        }
+
+        .case-details {
+            list-style: none;
+            margin-bottom: 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .case-details li {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .case-details li::before {
+            content: "●";
+            position: absolute;
+            left: 0;
+            color: var(--accent-yellow);
+        }
+
+        .card-yellow {
+            background-color: var(--accent-yellow);
+            color: var(--text-black);
+        }
+
+        .card-yellow h3 {
+            color: var(--text-black);
+        }
+
+        .details-dark li::before {
+            color: #000000;
+        }
+
+        .read-more-btn-outline {
+            display: inline-block;
+            padding: 12px 25px;
+            border: 2px solid var(--accent-yellow);
+            border-radius: 25px;
+            color: var(--accent-yellow);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .read-more-btn-filled {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: var(--text-black);
+            border-radius: 25px;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        @media (max-width: 1024px) {
+            .cases-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 768px) {
+            .cases-grid { grid-template-columns: 1fr; }
+            .hero-banner-container { flex-direction: column; height: auto; }
+            .hero-image-side, .hero-text-side { width: 100%; }
+        }
+    </style>
 </head>
 <body>
 
     <header class="header">
         <div class="header-container">
-            <div class="logo">
-                <i class="fa-solid fa-gem gem-icon"></i> VW Portfolio
-            </div>
+            <div class="logo">VW Portfolio</div>
             <nav class="nav">
                 <ul>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#cases">Case Studies</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Case Studies</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Blog</a></li>
                 </ul>
             </nav>
             <div class="menu-burger">Menu <i class="fa-solid fa-bars"></i></div>
         </div>
     </header>
 
-    <main class="main-content">
+    <main class="cases-section">
         <section class="hero-banner">
             <div class="hero-banner-container">
                 <div class="hero-image-side">
-                    <img src="https://via.placeholder.com/400x600/333333/ffffff?text=Add+Photo" alt="Developer Profile" class="developer-img">
+                    <img src="https://via.placeholder.com/400x600/333333/ffffff?text=Add+Photo" alt="Profile" class="developer-img">
                 </div>
                 <div class="hero-text-side">
-                    <i class="fa-solid fa-minus hero-icon icon-dash-left"></i>
                     <h1 class="crafted-title">CRAFTEDCANVAS</h1>
-                    <i class="fa-solid fa-wave-square hero-icon icon-wave-right"></i>
                     <p class="crafted-subtitle">Crafted Everything</p>
                 </div>
             </div>
         </section>
 
-        <section id="cases" class="cases-section">
-            <div class="cases-header">
-                <button class="case-studies-btn">Case Studies</button>
+        <button class="case-studies-btn">Case Studies</button>
+
+        <div class="cases-grid">
+            <div class="case-card">
+                <h3>Enhancing User Experience</h3>
+                <ul class="case-details">
+                    <li>Develop a visually stunning and professional portfolio website.</li>
+                    <li>Create an intuitive navigation structure for easy access to portfolio items.</li>
+                    <li>Optimize the website for responsiveness across various devices.</li>
+                </ul>
+                <a href="#" class="read-more-btn-outline">Read more</a>
             </div>
 
-            <div class="cases-grid">
-                <div class="case-card card-dark">
-                    <h3>Enhancing User Experience</h3>
-                    <ul class="case-details">
-                        <li>Develop a visually stunning and professional portfolio website.</li>
-                        <li>Create an intuitive navigation structure for easy access to portfolio items.</li>
-                        <li>Optimize the website for responsiveness across various devices and screen sizes.</li>
-                        <li>Implement interactive elements to engage users and showcase design skills.</li>
-                    </ul>
-                    <a href="#" class="read-more-btn-outline">Read more</a>
-                </div>
-
-                <div class="case-card card-yellow">
-                    <h3>Fashion Photography Lookbook</h3>
-                    <ul class="case-details details-dark">
-                        <li>Capture high-quality images showcasing collections and engage target customers.</li>
-                        <li>Highlight product details, styling to create visually appealing and informative.</li>
-                        <li>Enhance credibility through professional photography with brand aesthetics.</li>
-                        <li>Create a visually cohesive and inspiring lookbook that drives interest.</li>
-                    </ul>
-                    <a href="#" class="read-more-btn-filled">Read more</a>
-                </div>
-
-                <div class="case-card card-dark">
-                    <h3>Brand Identity Refresh</h3>
-                    <ul class="case-details">
-                        <li>Revitalize brand identity elements such as as logo, and typography for relevant look.</li>
-                        <li>Create brand guidelines for consistent brand presentation across all.</li>
-                        <li>Strengthen brand recognition among target audiences through refreshed.</li>
-                        <li>Align brand visuals with customer preferences for increased brand appeal.</li>
-                    </ul>
-                    <a href="#" class="read-more-btn-outline">Read more</a>
-                </div>
+            <div class="case-card card-yellow">
+                <h3>Fashion Photography Lookbook</h3>
+                <ul class="case-details details-dark">
+                    <li>Capture high-quality images showcasing collections effectively.</li>
+                    <li>Highlight product details to create visually appealing content.</li>
+                    <li>Enhance credibility through professional brand aesthetics.</li>
+                </ul>
+                <a href="#" class="read-more-btn-filled">Read more</a>
             </div>
-        </section>
+
+            <div class="case-card">
+                <h3>Brand Identity Refresh</h3>
+                <ul class="case-details">
+                    <li>Revitalize brand identity elements such as logo and typography.</li>
+                    <li>Create brand guidelines for consistent presentation everywhere.</li>
+                    <li>Strengthen brand recognition among target audiences.</li>
+                </ul>
+                <a href="#" class="read-more-btn-outline">Read more</a>
+            </div>
+        </div>
     </main>
 
-    </body>
+</body>
 </html>
