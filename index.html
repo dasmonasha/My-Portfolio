@@ -380,4 +380,165 @@
         footer {
             text-align: center;
             padding: 40px;
-            color: #4
+            color: #444;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .cases-grid { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 768px) {
+            .hero-banner-container { flex-direction: column; height: auto; }
+            .hero-image-side, .hero-text-side { width: 100%; }
+            .hero-image-side { height: 300px; }
+            .crafted-title { font-size: 3rem; }
+            .nav ul { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">D.A.S. <span>MONASHA</span></div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="menu-burger">Menu <i class="fa-solid fa-bars"></i></div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-banner">
+            <div class="hero-banner-container">
+                <div class="hero-image-side">
+                    <img src="https://via.placeholder.com/400x600/111111/ffffff?text=MONASHA" alt="D.A.S. Monasha" class="developer-img">
+                </div>
+                <div class="hero-text-side">
+                    <h1 class="crafted-title">D.A.S. MONASHA</h1>
+                    <p class="crafted-subtitle">Software Engineering Undergraduate & Systems Developer</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="about">
+            <h2>About Me</h2>
+            <div class="about-container">
+                <p>I am an Information Technology & Software Engineering undergraduate with a proven track record in custom software development and technology integration. Recognized as a highly resilient all-rounder, I possess strong executive leadership, strategic coordination, and communication skills developed under high-pressure environments.</p>
+                <p style="margin-top: 15px;">My core strengths lie in systematic execution—rooted deeply in my extensive background as a school <strong>Head Prefect</strong>, <strong>Child Protection Student Ambassador</strong>, and a <strong>Multi-Sport Team Captain</strong> leading disciplines like Cricket, Volleyball, Elle, and Kabaddi, alongside practicing competitive Karate.</p>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>Core Projects & Experience</h2>
+            <div class="cases-grid">
+                
+                <div class="case-card card-yellow">
+                    <div>
+                        <div class="media-box">
+                            <div class="media-placeholder">
+                                <i class="fa-solid fa-calculator"></i>
+                                [Add POS Demo Screenshot / Video here]
+                            </div>
+                        </div>
+                        <h3>Advanced POS & Inventory Architecture</h3>
+                        <ul class="case-details">
+                            <li>Custom-built a comprehensive Point of Sale system from scratch to streamline commercial workflows.</li>
+                            <li>Engineered backend handling for massive hardware retail product databases.</li>
+                            <li>Features real-time stock mapping, dynamic billing, and secure sales reporting.</li>
+                        </ul>
+                    </div>
+                    <div class="tech-tags">
+                        <span class="tag">SQL Backend</span>
+                        <span class="tag">AI Workflows</span>
+                        <span class="tag">System Design</span>
+                    </div>
+                </div>
+
+                <div class="case-card">
+                    <div>
+                        <div class="media-box">
+                            <div class="media-placeholder">
+                                <i class="fa-solid fa-users-line"></i>
+                                [Add Leadership / Sports Photo here]
+                            </div>
+                        </div>
+                        <h3>Executive Student Leadership</h3>
+                        <ul class="case-details">
+                            <li>Served as school Head Prefect, managing student discipline and event coordination.</li>
+                            <li>Appointed Child Protection Student Ambassador, driving policy advocacy programs.</li>
+                            <li>Multi-Sport Team Captain leading Cricket, Volleyball, Elle, and Kabaddi disciplines.</li>
+                        </ul>
+                    </div>
+                    <div class="tech-tags">
+                        <span class="tag">Governance</span>
+                        <span class="tag">Public Relations</span>
+                        <span class="tag">Strategy</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2>Skills & Certifications</h2>
+            <div class="skills-container">
+                
+                <div class="skills-category">
+                    <h3>Technical Specializations</h3>
+                    <ul>
+                        <li><i class="fa-solid fa-code"></i> Full-stack Software Development</li>
+                        <li><i class="fa-solid fa-database"></i> Database Management (SQL)</li>
+                        <li><i class="fa-solid fa-robot"></i> Agentic AI Tools & Assisted Workflows</li>
+                        <li><i class="fa-solid fa-keyboard"></i> High-Speed Professional Typing</li>
+                    </ul>
+                </div>
+
+                <div class="skills-category">
+                    <h3>Core Leadership Strengths</h3>
+                    <ul>
+                        <li><i class="fa-solid fa-people-roof"></i> Executive Team Coordination</li>
+                        <li><i class="fa-solid fa-bullhorn"></i> Public Relations & Strategic Liaison</li>
+                        <li><i class="fa-solid fa-chess"></i> On-field Tactical Sports Strategy</li>
+                        <li><i class="fa-solid fa-brain"></i> High-Discipline Mental Endurance</li>
+                    </ul>
+                </div>
+
+                <div class="skills-category">
+                    <h3>Professional Certifications</h3>
+                    <ul>
+                        <li><i class="fa-solid fa-award"></i> Spoken English - OUSL (Open University)</li>
+                        <li><i class="fa-solid fa-award"></i> IT & AI Tools Specialist - Advanced Inst.</li>
+                        <li><i class="fa-solid fa-award"></i> IT & Typing Mechanics - DP ICT Academy</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Let's Connect</h2>
+            <p>Open for freelance software engineering opportunities and enterprise-grade system design collaborations.</p>
+            <div class="contact-info">
+                <span><i class="fa-solid fa-phone"></i> +94 71 878 3416</span>
+                <span><i class="fa-solid fa-envelope"></i> contact@monasha.dev</span>
+            </div>
+            <div class="social-links">
+                <a href="https://linkedin.com" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://github.com" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 D.A.S. Monasha. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
