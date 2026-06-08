@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <title>D.A.S. Monasha - Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
@@ -49,6 +49,7 @@
             font-size: 1.2rem;
             font-weight: bold;
             color: var(--text-white);
+            letter-spacing: 1px;
         }
 
         .logo span {
@@ -85,17 +86,19 @@
             border-radius: 20px;
             overflow: hidden;
             margin-bottom: 60px;
+            border: 1px solid #222;
         }
 
         .hero-banner-container {
             display: flex;
             align-items: center;
-            height: 400px;
+            height: 440px;
         }
 
         .hero-image-side {
             width: 35%;
             height: 100%;
+            background: #111;
         }
 
         .developer-img {
@@ -112,16 +115,17 @@
         }
 
         .crafted-title {
-            font-size: 4rem;
+            font-size: 4.5rem;
             font-weight: 800;
-            letter-spacing: -2px;
+            letter-spacing: 2px;
             margin-bottom: 15px;
             color: #ffffff;
         }
 
         .crafted-subtitle {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             color: var(--accent-yellow);
+            letter-spacing: 1px;
         }
 
         /* Global Sections Layout */
@@ -137,6 +141,7 @@
             color: #ffffff;
             border-left: 5px solid var(--accent-yellow);
             padding-left: 15px;
+            text-transform: uppercase;
         }
 
         /* About Section */
@@ -147,17 +152,19 @@
             font-size: 1.1rem;
             line-height: 1.8;
             color: var(--text-gray);
+            border: 1px solid #222;
         }
 
         .about-container strong {
-            color: var(--text-white);
+            color: #ffffff;
+            border-bottom: 2px solid var(--accent-yellow);
         }
 
-        /* Projects Section (Case Studies Style) */
+        /* Interactive Grid Layout (Touch/Hover Cards) */
         .cases-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
+            gap: 25px;
         }
 
         .case-card {
@@ -167,12 +174,22 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            min-height: 400px;
+            min-height: 450px;
+            border: 1px solid #222;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        /* ටච් කරද්දී හෝ මවුස් එක ගෙනිච්චම වෙනස් වෙන හැටි */
+        .case-card:hover, .case-card:active {
+            transform: translateY(-8px);
+            border-color: var(--accent-yellow);
+            box-shadow: 0 10px 20px rgba(241, 246, 24, 0.1);
         }
 
         .case-card h3 {
-            font-size: 1.6rem;
-            margin-bottom: 20px;
+            font-size: 1.7rem;
+            margin-bottom: 25px;
             color: #ffffff;
         }
 
@@ -181,11 +198,11 @@
             margin-bottom: 30px;
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 15px;
         }
 
         .case-details li {
-            font-size: 0.95rem;
+            font-size: 1rem;
             line-height: 1.6;
             position: relative;
             padding-left: 25px;
@@ -199,26 +216,62 @@
             color: var(--accent-yellow);
         }
 
+        /* කහ පාටින් කැපිලා පේන කාඩ් එක */
         .card-yellow {
             background-color: var(--accent-yellow);
             color: var(--text-black);
+            border: none;
         }
 
         .card-yellow h3 {
             color: var(--text-black);
+            font-weight: 800;
         }
 
         .card-yellow .case-details li {
             color: var(--text-black);
+            font-weight: 500;
         }
 
         .card-yellow .case-details li::before {
             color: #000000;
         }
 
-        /* Tags for tech */
+        /* Media Container (ෆොටෝ, වීඩියෝ දාන්න පුළුවන් තැන්) */
+        .media-box {
+            width: 100%;
+            height: 200px;
+            background: #090a0c;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px dashed #444;
+        }
+
+        .media-box img, .media-box video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .media-placeholder {
+            color: #555;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        .media-placeholder i {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            display: block;
+            color: #333;
+        }
+
+        /* Tech Tags */
         .tech-tags {
-            margin-top: 15px;
             display: flex;
             gap: 10px;
             flex-wrap: wrap;
@@ -227,10 +280,11 @@
         .tag {
             background: #0c0d10;
             color: var(--accent-yellow);
-            padding: 5px 12px;
-            border-radius: 15px;
+            padding: 6px 14px;
+            border-radius: 20px;
             font-size: 0.8rem;
             font-weight: bold;
+            border: 1px solid #222;
         }
 
         .card-yellow .tag {
@@ -242,221 +296,88 @@
         .skills-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
+            gap: 25px;
         }
 
         .skills-category {
             background-color: var(--card-bg-dark);
-            padding: 30px;
+            padding: 35px;
             border-radius: 20px;
+            border: 1px solid #222;
+            transition: all 0.3s ease;
+        }
+
+        .skills-category:hover {
+            border-color: var(--accent-yellow);
         }
 
         .skills-category h3 {
             color: var(--accent-yellow);
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             font-size: 1.3rem;
+            text-transform: uppercase;
         }
 
         .skills-category ul {
             list-style: none;
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 15px;
         }
 
         .skills-category li {
-            font-size: 1rem;
+            font-size: 1.05rem;
             color: var(--text-gray);
         }
 
         .skills-category i {
             color: var(--accent-yellow);
-            margin-right: 10px;
+            margin-right: 12px;
+            width: 20px;
         }
 
         /* Contact Section */
         .contact-section {
             text-align: center;
             background-color: var(--card-bg-dark);
-            padding: 50px;
+            padding: 60px;
             border-radius: 20px;
+            border: 1px solid #222;
         }
 
         .contact-section p {
             color: var(--text-gray);
-            margin-bottom: 30px;
+            margin-bottom: 35px;
             font-size: 1.1rem;
         }
 
         .contact-info {
             display: flex;
             justify-content: center;
-            gap: 40px;
-            margin-bottom: 30px;
-            font-size: 1.2rem;
+            gap: 50px;
+            margin-bottom: 40px;
+            font-size: 1.25rem;
             flex-wrap: wrap;
         }
 
         .contact-info i {
             color: var(--accent-yellow);
-            margin-right: 10px;
+            margin-right: 12px;
         }
 
         .social-links a {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             color: var(--text-white);
-            margin: 0 15px;
-            transition: color 0.3s;
+            margin: 0 20px;
+            transition: all 0.3s ease;
         }
 
         .social-links a:hover {
             color: var(--accent-yellow);
+            transform: scale(1.1);
         }
 
         footer {
             text-align: center;
             padding: 40px;
-            color: #555555;
-            font-size: 0.9rem;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 1024px) {
-            .cases-grid { grid-template-columns: 1fr; }
-        }
-        @media (max-width: 768px) {
-            .hero-banner-container { flex-direction: column; height: auto; }
-            .hero-image-side, .hero-text-side { width: 100%; }
-            .nav ul { display: none; } /* Simplified for code size */
-        }
-    </style>
-</head>
-<body>
-
-    <header class="header">
-        <div class="header-container">
-            <div class="logo">Jayasundara<span>.dev</span></div>
-            <nav class="nav">
-                <ul>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-            <div class="menu-burger">Menu <i class="fa-solid fa-bars"></i></div>
-        </div>
-    </header>
-
-    <main>
-        <section class="hero-banner">
-            <div class="hero-banner-container">
-                <div class="hero-image-side">
-                    <img src="https://via.placeholder.com/400x600/333333/ffffff?text=Jayasundara" alt="Developer" class="developer-img">
-                </div>
-                <div class="hero-text-side">
-                    <h1 class="crafted-title">JAYASUNDARA</h1>
-                    <p class="crafted-subtitle">Software Engineering Undergraduate & Developer</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="about">
-            <h2>About Me</h2>
-            <div class="about-container">
-                <p>I am an Information Technology & Software Engineering undergraduate with a proven track record in custom software development and technology integration. Recognized as a highly resilient all-rounder, I possess strong executive leadership, strategic coordination, and communication skills developed under high-pressure environments.</p>
-                <p style="margin-top: 15px;">My core strengths lie in systematic execution—rooted deeply in my extensive background as a school <strong>Head Prefect</strong>, <strong>Child Protection Student Ambassador</strong>, and a <strong>Multi-Sport Team Captain</strong> leading disciplines like Cricket, Volleyball, Elle, and Kabaddi, alongside practicing competitive Karate.</p>
-            </div>
-        </section>
-
-        <section id="projects">
-            <h2>Core Projects</h2>
-            <div class="cases-grid">
-                
-                <div class="case-card card-yellow">
-                    <h3>Custom POS & Inventory System</h3>
-                    <ul class="case-details">
-                        <li>Designed and custom-built a fully functional Point of Sale and inventory management system from scratch.</li>
-                        <li>Tailored backend logic for massive hardware and commercial retail inventories.</li>
-                        <li>Handles real-time stock levels, dynamic billing modules, and transaction databases.</li>
-                        <li>Utilized generative AI-assisted environments to optimize code quality and workflow speed.</li>
-                    </ul>
-                    <div class="tech-tags">
-                        <span class="tag">Architecture</span>
-                        <span class="tag">SQL Databases</span>
-                        <span class="tag">AI Coding</span>
-                    </div>
-                </div>
-
-                <div class="case-card">
-                    <h3>Professional Digital Ecosystem</h3>
-                    <ul class="case-details">
-                        <li>A clean, modern, high-end responsive portfolio ecosystem.</li>
-                        <li>Built to showcase technical competencies, projects, and leadership metrics globally.</li>
-                        <li>Optimized for performance and dynamic rendering across all device displays.</li>
-                    </ul>
-                    <div class="tech-tags">
-                        <span class="tag">HTML5</span>
-                        <span class="tag">CSS3 Grid</span>
-                        <span class="tag">JavaScript</span>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <section id="skills">
-            <h2>Skills & Certifications</h2>
-            <div class="skills-container">
-                
-                <div class="skills-category">
-                    <h3>Technical Specializations</h3>
-                    <ul>
-                        <li><i class="fa-solid fa-code"></i> Software & Web Development</li>
-                        <li><i class="fa-solid fa-database"></i> Database Management (SQL)</li>
-                        <li><i class="fa-solid fa-robot"></i> AI-assisted Core Workflows</li>
-                        <li><i class="fa-solid fa-keyboard"></i> High-Speed Professional Typing</li>
-                    </ul>
-                </div>
-
-                <div class="skills-category">
-                    <h3>Leadership Metrics</h3>
-                    <ul>
-                        <li><i class="fa-solid fa-users"></i> Executive Team Coordination</li>
-                        <li><i class="fa-solid fa-bullhorn"></i> Public Relations & Strategic Liaison</li>
-                        <li><i class="fa-solid fa-brain"></i> Mental Discipline & Endurance</li>
-                    </ul>
-                </div>
-
-                <div class="skills-category">
-                    <h3>Professional Certifications</h3>
-                    <ul>
-                        <li><i class="fa-solid fa-award"></i> Spoken English - OUSL</li>
-                        <li><i class="fa-solid fa-award"></i> IT & AI Specialist - Advanced Inst.</li>
-                        <li><i class="fa-solid fa-award"></i> IT & Typing Mechanics - DP Academy</li>
-                    </ul>
-                </div>
-
-            </div>
-        </section>
-
-        <section id="contact">
-            <h2>Let's Connect</h2>
-            <p>Open for freelance software engineering consultations and enterprise system design layouts.</p>
-            <div class="contact-info">
-                <span><i class="fa-solid fa-phone"></i> +94 71 878 3416</span>
-                <span><i class="fa-solid fa-envelope"></i> [ඔයාගේ_Email_එක_මෙතනට_දාන්න]</span>
-            </div>
-            <div class="social-links">
-                <a href="https://linkedin.com" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-                <a href="https://github.com" target="_blank"><i class="fa-brands fa-github"></i></a>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2026 Jayasundara. All Rights Reserved.</p>
-    </footer>
-
-</body>
-</html>
+            color: #4
